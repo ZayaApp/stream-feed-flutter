@@ -65,8 +65,8 @@ OgVideo _$OgVideoFromJson(Map json) => OgVideo(
       image: json['image'] as String?,
       url: json['url'] as String?,
       secureUrl: json['secure_url'] as String?,
-      width: json['width'] as String?,
-      height: json['height'] as String?,
+      width: (json['width'] is int) ? "${json['width']}" : json["width"] as String?,
+      height: (json['height'] is int) ? "${json['height']}" : json["height"] as String?,
       type: json['type'] as String?,
       alt: json['alt'] as String?,
     );
